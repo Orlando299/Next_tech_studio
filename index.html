@@ -671,7 +671,7 @@
         }
 
         /* ============================================================
-           PORTFOLIO / PROJECTS
+           PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
            ============================================================ */
         .projects {
             background: var(--dark-card);
@@ -752,6 +752,158 @@
             color: var(--gray-400);
             font-size: 0.9rem;
             line-height: 1.7;
+        }
+
+        .project-card .project-info .tech-used {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 12px;
+        }
+
+        .project-card .project-info .tech-used span {
+            background: rgba(108, 60, 225, 0.15);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            color: var(--primary-light);
+        }
+
+        .project-card .project-info .learn-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 16px;
+            color: var(--primary-light);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: gap var(--transition);
+        }
+
+        .project-card .project-info .learn-more:hover {
+            gap: 14px;
+        }
+
+        .filter-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            padding: 8px 24px;
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            color: var(--gray-400);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all var(--transition);
+        }
+
+        .filter-btn:hover {
+            background: rgba(108, 60, 225, 0.15);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        .filter-btn.active {
+            background: var(--gradient-1);
+            border-color: transparent;
+            color: white;
+        }
+
+        /* ============================================================
+           SECCIÓN MiNegocio - DEMO INTERACTIVA
+           ============================================================ */
+        #minegocio .badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(108, 60, 225, 0.2);
+            border: 1px solid rgba(108, 60, 225, 0.3);
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-light);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .tema-selector {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .tema-btn {
+            transition: all var(--transition);
+            position: relative;
+            padding: 12px 28px;
+        }
+
+        .tema-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+        }
+
+        .tema-btn.active {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(108, 60, 225, 0.4) !important;
+        }
+
+        .tema-btn.active::after {
+            content: '✓';
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--gradient-1);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+
+        .demo-frame-wrapper {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(108, 60, 225, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: var(--dark);
+            transition: all var(--transition);
+        }
+
+        .demo-frame-wrapper:hover {
+            box-shadow: 0 30px 80px rgba(108, 60, 225, 0.25);
+        }
+
+        #demo-iframe-minegocio {
+            width: 100%;
+            height: 700px;
+            border: none;
+            display: block;
+            background: #fff;
+            transition: opacity 0.3s ease;
+        }
+
+        #demo-iframe-minegocio.loading {
+            opacity: 0.5;
+        }
+
+        .demo-hint {
+            text-align: center;
+            color: var(--gray-400);
+            margin-top: 16px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+            animation: pulse 2s ease-in-out infinite;
         }
 
         /* ============================================================
@@ -991,6 +1143,19 @@
             .footer-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
+            #demo-iframe-minegocio {
+                height: 500px;
+            }
+
+            .tema-selector {
+                gap: 8px;
+            }
+
+            .tema-btn {
+                font-size: 0.85rem;
+                padding: 10px 18px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -1049,6 +1214,24 @@
             .cta h2 {
                 font-size: 2rem;
             }
+
+            #demo-iframe-minegocio {
+                height: 400px;
+            }
+
+            .tema-btn {
+                font-size: 0.75rem;
+                padding: 8px 14px;
+            }
+
+            .tema-btn .btn-text {
+                display: none;
+            }
+
+            .tema-btn::before {
+                content: attr(data-label);
+                font-size: 0.75rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -1071,6 +1254,10 @@
 
             .section-padding {
                 padding: 60px 0;
+            }
+
+            #demo-iframe-minegocio {
+                height: 350px;
             }
         }
 
@@ -1111,6 +1298,7 @@
                 <li><a href="#services">Servicios</a></li>
                 <li><a href="#tech">Tecnologías</a></li>
                 <li><a href="#projects">Proyectos</a></li>
+                <li><a href="#minegocio">MiNegocio</a></li>
                 <li><a href="#testimonials">Testimonios</a></li>
                 <li><a href="#contact" class="btn btn-primary btn-sm">Contactar</a></li>
             </ul>
@@ -1322,149 +1510,194 @@
         </div>
     </section>
 
-   <!-- ============================================================
-PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
-============================================================ -->
-<section class="projects section-padding" id="projects">
-    <div class="container">
-        <div class="section-header animate-on-scroll">
-            <h2 class="section-title">Casos de éxito</h2>
-            <p class="section-subtitle">
-                Proyectos reales que demuestran nuestra capacidad para transformar
-                ideas en soluciones digitales.
+    <!-- ============================================================
+    PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
+    ============================================================ -->
+    <section class="projects section-padding" id="projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Casos de éxito</h2>
+                <p class="section-subtitle">
+                    Proyectos reales que demuestran nuestra capacidad para transformar
+                    ideas en soluciones digitales.
+                </p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filter-tabs animate-on-scroll" id="filterTabs">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+                <button class="filter-btn" data-filter="deportivo">🏟️ Deportivo</button>
+                <button class="filter-btn" data-filter="concursos">🏆 Concursos</button>
+                <button class="filter-btn" data-filter="empresas">🏢 Empresas</button>
+                <button class="filter-btn" data-filter="educativo">📚 Educativo</button>
+            </div>
+
+            <!-- Grid de proyectos -->
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Proyecto 1: Sibarita Sport Club (Deportivo) -->
+                <div class="project-card animate-on-scroll" data-category="deportivo">
+                    <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+                        <span style="font-size:4rem;">⚽</span>
+                        <div class="overlay">
+                            <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/" target="_blank" class="btn btn-primary btn-sm">
+                                Ver proyecto →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Deportivo</span>
+                        <h3>Sibarita Sport Club</h3>
+                        <p>
+                            Web oficial para un club deportivo con calendario de partidos,
+                            clasificaciones, grupos y un juego interactivo de "Bolas Criollas".
+                        </p>
+                        <div class="tech-used">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                        </div>
+                        <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/" target="_blank" class="learn-more">
+                            Ver proyecto →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 2: Quiniela Mundial (Concursos) -->
+                <div class="project-card animate-on-scroll" data-category="concursos">
+                    <div class="project-image" style="background: linear-gradient(135deg, #0f0c29, #302b63);">
+                        <span style="font-size:4rem;">🏆</span>
+                        <div class="overlay">
+                            <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/quiniela.html" target="_blank" class="btn btn-primary btn-sm">
+                                Ver proyecto →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Concursos</span>
+                        <h3>Quiniela Mundial</h3>
+                        <p>
+                            Aplicación interactiva para gestionar quinielas de fútbol con
+                            registro de usuarios, sistema de puntuación y ranking en tiempo real.
+                        </p>
+                        <div class="tech-used">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                        </div>
+                        <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/quiniela.html" target="_blank" class="learn-more">
+                            Ver proyecto →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 3: MiNegocio (Empresas) -->
+                <div class="project-card animate-on-scroll" data-category="empresas">
+                    <div class="project-image" style="background: linear-gradient(135deg, #0f2027, #203a43);">
+                        <span style="font-size:4rem;">📊</span>
+                        <div class="overlay">
+                            <a href="https://orlando299.github.io/Mi_Negocio/" target="_blank" class="btn btn-primary btn-sm">
+                                Ver proyecto →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Empresas</span>
+                        <h3>MiNegocio</h3>
+                        <p>
+                            Plataforma de gestión empresarial con panel administrativo,
+                            módulo cliente, inventario en tiempo real y reportes inteligentes.
+                        </p>
+                        <div class="tech-used">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>LocalStorage</span>
+                            <span>Firebase</span>
+                        </div>
+                        <a href="https://orlando299.github.io/Mi_Negocio/" target="_blank" class="learn-more">
+                            Ver proyecto →
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Proyecto 4: Mi Blog de Matemáticas (Educativo) -->
+                <div class="project-card animate-on-scroll" data-category="educativo">
+                    <div class="project-image" style="background: linear-gradient(135deg, #141e30, #243b55);">
+                        <span style="font-size:4rem;">📐</span>
+                        <div class="overlay">
+                            <a href="https://orlando299.github.io/Mi-Blogs-de-Matem-ticas-/" target="_blank" class="btn btn-primary btn-sm">
+                                Ver proyecto →
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="tag">Educativo</span>
+                        <h3>Mi Blog de Matemáticas</h3>
+                        <p>
+                            Plataforma educativa con contenido estructurado por materias
+                            y trayectos, enfocada en el Programa Nacional de Formación en Electricidad.
+                        </p>
+                        <div class="tech-used">
+                            <span>HTML5</span>
+                            <span>CSS3</span>
+                            <span>JavaScript</span>
+                            <span>Markdown</span>
+                        </div>
+                        <a href="https://orlando299.github.io/Mi-Blogs-de-Matem-ticas-/" target="_blank" class="learn-more">
+                            Ver proyecto →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================
+    SECCIÓN: MiNegocio - DEMO INTERACTIVA
+    ============================================================ -->
+    <section class="section-padding" id="minegocio" style="background: var(--dark-card); border-top: 1px solid rgba(255,255,255,0.06);">
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align:center; margin-bottom:40px;">
+                <span class="badge" style="display:inline-block; padding:6px 16px; background:rgba(108,60,225,0.2); border:1px solid rgba(108,60,225,0.3); border-radius:50px; font-size:0.8rem; font-weight:600; color:var(--primary-light); margin-bottom:16px;">⭐ Producto Estrella</span>
+                <h2 class="section-title" style="margin-bottom:12px;">MiNegocio <span style="background:var(--gradient-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">Plataforma de Gestión</span></h2>
+                <p class="section-subtitle" style="max-width:600px; margin:0 auto; color:var(--gray-400);">
+                    Una solución completa para la gestión de ventas, inventario, clientes y pedidos. 
+                    Adaptable a cualquier industria con estilos personalizados.
+                </p>
+            </div>
+
+            <!-- Selector de Temas -->
+            <div class="tema-selector animate-on-scroll">
+                <button class="btn btn-primary tema-btn active" data-tema="polar" data-label="🍺 Polar" onclick="cargarDemoMiNegocio('polar')" style="background:#00338D; box-shadow:0 4px 20px rgba(0,51,141,0.4);">
+                    <span class="btn-text">🍺 Polar</span>
+                </button>
+                <button class="btn btn-primary tema-btn" data-tema="empanadas" data-label="🥟 Empanadas" onclick="cargarDemoMiNegocio('empanadas')" style="background:#D97706; box-shadow:0 4px 20px rgba(217,119,6,0.4);">
+                    <span class="btn-text">🥟 Empanadas</span>
+                </button>
+                <button class="btn btn-primary tema-btn" data-tema="comidaRapida" data-label="🍔 Comida Rápida" onclick="cargarDemoMiNegocio('comidaRapida')" style="background:#DC2626; box-shadow:0 4px 20px rgba(220,38,38,0.4);">
+                    <span class="btn-text">🍔 Comida Rápida</span>
+                </button>
+                <button class="btn btn-primary tema-btn" data-tema="todoTipo" data-label="🍽️ Todo Tipo" onclick="cargarDemoMiNegocio('todoTipo')" style="background:#059669; box-shadow:0 4px 20px rgba(5,150,105,0.4);">
+                    <span class="btn-text">🍽️ Todo Tipo</span>
+                </button>
+            </div>
+
+            <!-- Iframe con la Demo -->
+            <div class="demo-frame-wrapper animate-on-scroll">
+                <iframe 
+                    id="demo-iframe-minegocio" 
+                    src="https://orlando299.github.io/Mi_Negocio/?tema=polar" 
+                    loading="lazy"
+                    allow="clipboard-write"
+                ></iframe>
+            </div>
+            <p class="demo-hint animate-on-scroll">
+                💡 Haz clic en los botones de arriba para cambiar el tema de la demo en vivo.
             </p>
         </div>
-
-        <!-- Filtros -->
-        <div class="filter-tabs animate-on-scroll" id="filterTabs">
-            <button class="filter-btn active" data-filter="all">Todos</button>
-            <button class="filter-btn" data-filter="deportivo">🏟️ Deportivo</button>
-            <button class="filter-btn" data-filter="concursos">🏆 Concursos</button>
-            <button class="filter-btn" data-filter="empresas">🏢 Empresas</button>
-            <button class="filter-btn" data-filter="educativo">📚 Educativo</button>
-        </div>
-
-        <!-- Grid de proyectos -->
-        <div class="projects-grid" id="projectsGrid">
-            <!-- Proyecto 1: Sibarita Sport Club (Deportivo) -->
-            <div class="project-card animate-on-scroll" data-category="deportivo">
-                <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
-                    <span style="font-size:4rem;">⚽</span>
-                    <div class="overlay">
-                        <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/" target="_blank" class="btn btn-primary btn-sm">
-                            Ver proyecto →
-                        </a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">Deportivo</span>
-                    <h3>Sibarita Sport Club</h3>
-                    <p>
-                        Web oficial para un club deportivo con calendario de partidos,
-                        clasificaciones, grupos y un juego interactivo de "Bolas Criollas".
-                    </p>
-                    <div class="tech-used">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>LocalStorage</span>
-                    </div>
-                    <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/" target="_blank" class="learn-more">
-                        Ver proyecto →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Proyecto 2: Quiniela Mundial (Concursos) -->
-            <div class="project-card animate-on-scroll" data-category="concursos">
-                <div class="project-image" style="background: linear-gradient(135deg, #0f0c29, #302b63);">
-                    <span style="font-size:4rem;">🏆</span>
-                    <div class="overlay">
-                        <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/quiniela.html" target="_blank" class="btn btn-primary btn-sm">
-                            Ver proyecto →
-                        </a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">Concursos</span>
-                    <h3>Quiniela Mundial</h3>
-                    <p>
-                        Aplicación interactiva para gestionar quinielas de fútbol con
-                        registro de usuarios, sistema de puntuación y ranking en tiempo real.
-                    </p>
-                    <div class="tech-used">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>LocalStorage</span>
-                    </div>
-                    <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/quiniela.html" target="_blank" class="learn-more">
-                        Ver proyecto →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Proyecto 3: MiNegocio (Empresas) -->
-            <div class="project-card animate-on-scroll" data-category="empresas">
-                <div class="project-image" style="background: linear-gradient(135deg, #0f2027, #203a43);">
-                    <span style="font-size:4rem;">📊</span>
-                    <div class="overlay">
-                        <a href="https://orlando299.github.io/Mi_Negocio/" target="_blank" class="btn btn-primary btn-sm">
-                            Ver proyecto →
-                        </a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">Empresas</span>
-                    <h3>MiNegocio</h3>
-                    <p>
-                        Plataforma de gestión empresarial con panel administrativo,
-                        módulo cliente, inventario en tiempo real y reportes inteligentes.
-                    </p>
-                    <div class="tech-used">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>LocalStorage</span>
-                        <span>Firebase (planificado)</span>
-                    </div>
-                    <a href="https://orlando299.github.io/Mi_Negocio/" target="_blank" class="learn-more">
-                        Ver proyecto →
-                    </a>
-                </div>
-            </div>
-
-            <!-- Proyecto 4: Mi Blog de Matemáticas (Educativo) -->
-            <div class="project-card animate-on-scroll" data-category="educativo">
-                <div class="project-image" style="background: linear-gradient(135deg, #141e30, #243b55);">
-                    <span style="font-size:4rem;">📐</span>
-                    <div class="overlay">
-                        <a href="https://orlando299.github.io/Mi-Blogs-de-Matem-ticas-/" target="_blank" class="btn btn-primary btn-sm">
-                            Ver proyecto →
-                        </a>
-                    </div>
-                </div>
-                <div class="project-info">
-                    <span class="tag">Educativo</span>
-                    <h3>Mi Blog de Matemáticas</h3>
-                    <p>
-                        Plataforma educativa con contenido estructurado por materias
-                        y trayectos, enfocada en el Programa Nacional de Formación en Electricidad.
-                    </p>
-                    <div class="tech-used">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>JavaScript</span>
-                        <span>Markdown</span>
-                    </div>
-                    <a href="https://orlando299.github.io/Mi-Blogs-de-Matem-ticas-/" target="_blank" class="learn-more">
-                        Ver proyecto →
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- ============================================================
     TESTIMONIALS
@@ -1638,7 +1871,6 @@ PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
             navLinks.classList.toggle('open');
         });
 
-        // Cerrar menú al hacer clic en un enlace
         navLinks.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('open');
@@ -1664,7 +1896,7 @@ PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
         animateElements.forEach(el => observer.observe(el));
 
         // ============================================================
-        // 4. SMOOTH SCROLL para enlaces internos
+        // 4. SMOOTH SCROLL
         // ============================================================
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
@@ -1684,7 +1916,7 @@ PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
         });
 
         // ============================================================
-        // 5. CONTADOR DE ESTADÍSTICAS (opcional, efecto visual)
+        // 5. CONTADOR DE ESTADÍSTICAS
         // ============================================================
         function animateCounter(element, target, duration = 2000) {
             let start = 0;
@@ -1702,7 +1934,6 @@ PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
             update();
         }
 
-        // Esperar a que el hero sea visible
         const heroStats = document.querySelector('.hero-stats');
         if (heroStats) {
             const statsObserver = new IntersectionObserver((entries) => {
@@ -1713,7 +1944,6 @@ PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
                         numbers.forEach((el, index) => {
                             if (index < targets.length) {
                                 const target = targets[index];
-                                // Limpiar el contenido actual
                                 el.textContent = '0+';
                                 animateCounter(el, target);
                             }
@@ -1726,9 +1956,74 @@ PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
         }
 
         // ============================================================
-        // 6. EFECTO DE ESCRITURA EN EL CÓDIGO (ya implementado con CSS)
+        // 6. FILTRO DE PROYECTOS
         // ============================================================
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterButtons.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterButtons.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filter = this.dataset.filter;
+
+                projectCards.forEach(card => {
+                    const category = card.dataset.category;
+                    if (filter === 'all' || category === filter) {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 50);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // ============================================================
+        // 7. DEMO MiNegocio - Cambio de tema
+        // ============================================================
+        function cargarDemoMiNegocio(tema) {
+            const iframe = document.getElementById('demo-iframe-minegocio');
+            const buttons = document.querySelectorAll('.tema-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.tema === tema) {
+                    btn.classList.add('active');
+                }
+            });
+
+            if (iframe) {
+                iframe.classList.add('loading');
+                iframe.src = `https://orlando299.github.io/Mi_Negocio/?tema=${tema}`;
+                iframe.onload = function() {
+                    iframe.classList.remove('loading');
+                };
+            }
+        }
+
+        // Cargar tema inicial (polar) y asegurar botón activo
+        document.addEventListener('DOMContentLoaded', function() {
+            const btnPolar = document.querySelector('.tema-btn[data-tema="polar"]');
+            if (btnPolar) btnPolar.classList.add('active');
+
+            // Cargar el iframe con el tema guardado (polar por defecto)
+            const iframe = document.getElementById('demo-iframe-minegocio');
+            if (iframe) {
+                iframe.src = 'https://orlando299.github.io/Mi_Negocio/?tema=polar';
+            }
+        });
+
         console.log('⚡ NexTech Studio - Construyendo el futuro digital');
+        console.log('🍺 Demo de MiNegocio integrada con selector de temas');
     </script>
 
 </body>
