@@ -1322,73 +1322,149 @@
         </div>
     </section>
 
-    <!-- ============================================================
-    PROJECTS
-    ============================================================ -->
-    <section class="projects section-padding" id="projects">
-        <div class="container">
-            <div class="section-header animate-on-scroll">
-                <h2 class="section-title">Proyectos destacados</h2>
-                <p class="section-subtitle">
-                    Casos de éxito que demuestran nuestra capacidad para transformar
-                    ideas en realidades digitales.
-                </p>
+   <!-- ============================================================
+PROJECTS / CASOS DE ÉXITO (con filtros por categoría)
+============================================================ -->
+<section class="projects section-padding" id="projects">
+    <div class="container">
+        <div class="section-header animate-on-scroll">
+            <h2 class="section-title">Casos de éxito</h2>
+            <p class="section-subtitle">
+                Proyectos reales que demuestran nuestra capacidad para transformar
+                ideas en soluciones digitales.
+            </p>
+        </div>
+
+        <!-- Filtros -->
+        <div class="filter-tabs animate-on-scroll" id="filterTabs">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="deportivo">🏟️ Deportivo</button>
+            <button class="filter-btn" data-filter="concursos">🏆 Concursos</button>
+            <button class="filter-btn" data-filter="empresas">🏢 Empresas</button>
+            <button class="filter-btn" data-filter="educativo">📚 Educativo</button>
+        </div>
+
+        <!-- Grid de proyectos -->
+        <div class="projects-grid" id="projectsGrid">
+            <!-- Proyecto 1: Sibarita Sport Club (Deportivo) -->
+            <div class="project-card animate-on-scroll" data-category="deportivo">
+                <div class="project-image" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
+                    <span style="font-size:4rem;">⚽</span>
+                    <div class="overlay">
+                        <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/" target="_blank" class="btn btn-primary btn-sm">
+                            Ver proyecto →
+                        </a>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <span class="tag">Deportivo</span>
+                    <h3>Sibarita Sport Club</h3>
+                    <p>
+                        Web oficial para un club deportivo con calendario de partidos,
+                        clasificaciones, grupos y un juego interactivo de "Bolas Criollas".
+                    </p>
+                    <div class="tech-used">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
+                    </div>
+                    <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/" target="_blank" class="learn-more">
+                        Ver proyecto →
+                    </a>
+                </div>
             </div>
 
-            <div class="projects-grid">
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image" style="background: linear-gradient(135deg, #6C3CE1, #00D4FF);">
-                        🛒
-                        <div class="overlay">
-                            <span class="btn btn-primary btn-sm">Ver caso →</span>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <span class="tag">SaaS</span>
-                        <h3>MiNegocio</h3>
-                        <p>
-                            Plataforma de gestión empresarial con módulo cliente,
-                            inventario en tiempo real y reportes inteligentes.
-                        </p>
+            <!-- Proyecto 2: Quiniela Mundial (Concursos) -->
+            <div class="project-card animate-on-scroll" data-category="concursos">
+                <div class="project-image" style="background: linear-gradient(135deg, #0f0c29, #302b63);">
+                    <span style="font-size:4rem;">🏆</span>
+                    <div class="overlay">
+                        <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/quiniela.html" target="_blank" class="btn btn-primary btn-sm">
+                            Ver proyecto →
+                        </a>
                     </div>
                 </div>
-
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image" style="background: linear-gradient(135deg, #FF6B6B, #FFB84D);">
-                        🤖
-                        <div class="overlay">
-                            <span class="btn btn-primary btn-sm">Ver caso →</span>
-                        </div>
+                <div class="project-info">
+                    <span class="tag">Concursos</span>
+                    <h3>Quiniela Mundial</h3>
+                    <p>
+                        Aplicación interactiva para gestionar quinielas de fútbol con
+                        registro de usuarios, sistema de puntuación y ranking en tiempo real.
+                    </p>
+                    <div class="tech-used">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
                     </div>
-                    <div class="project-info">
-                        <span class="tag">IA</span>
-                        <h3>Chatbot Inteligente</h3>
-                        <p>
-                            Asistente virtual con NLP para atención al cliente 24/7,
-                            integración con WhatsApp y CRM.
-                        </p>
+                    <a href="https://orlando299.github.io/Pagina-Web-de-Sibarita-Sport-Club/quiniela.html" target="_blank" class="learn-more">
+                        Ver proyecto →
+                    </a>
+                </div>
+            </div>
+
+            <!-- Proyecto 3: MiNegocio (Empresas) -->
+            <div class="project-card animate-on-scroll" data-category="empresas">
+                <div class="project-image" style="background: linear-gradient(135deg, #0f2027, #203a43);">
+                    <span style="font-size:4rem;">📊</span>
+                    <div class="overlay">
+                        <a href="https://orlando299.github.io/Mi_Negocio/" target="_blank" class="btn btn-primary btn-sm">
+                            Ver proyecto →
+                        </a>
                     </div>
                 </div>
+                <div class="project-info">
+                    <span class="tag">Empresas</span>
+                    <h3>MiNegocio</h3>
+                    <p>
+                        Plataforma de gestión empresarial con panel administrativo,
+                        módulo cliente, inventario en tiempo real y reportes inteligentes.
+                    </p>
+                    <div class="tech-used">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>LocalStorage</span>
+                        <span>Firebase (planificado)</span>
+                    </div>
+                    <a href="https://orlando299.github.io/Mi_Negocio/" target="_blank" class="learn-more">
+                        Ver proyecto →
+                    </a>
+                </div>
+            </div>
 
-                <div class="project-card animate-on-scroll">
-                    <div class="project-image" style="background: linear-gradient(135deg, #00D4FF, #6C3CE1);">
-                        📊
-                        <div class="overlay">
-                            <span class="btn btn-primary btn-sm">Ver caso →</span>
-                        </div>
+            <!-- Proyecto 4: Mi Blog de Matemáticas (Educativo) -->
+            <div class="project-card animate-on-scroll" data-category="educativo">
+                <div class="project-image" style="background: linear-gradient(135deg, #141e30, #243b55);">
+                    <span style="font-size:4rem;">📐</span>
+                    <div class="overlay">
+                        <a href="https://orlando299.github.io/Mi-Blogs-de-Matem-ticas-/" target="_blank" class="btn btn-primary btn-sm">
+                            Ver proyecto →
+                        </a>
                     </div>
-                    <div class="project-info">
-                        <span class="tag">BI</span>
-                        <h3>Dashboard Analytics</h3>
-                        <p>
-                            Sistema de visualización de datos con KPIs en tiempo
-                            real, predicciones y alertas automáticas.
-                        </p>
+                </div>
+                <div class="project-info">
+                    <span class="tag">Educativo</span>
+                    <h3>Mi Blog de Matemáticas</h3>
+                    <p>
+                        Plataforma educativa con contenido estructurado por materias
+                        y trayectos, enfocada en el Programa Nacional de Formación en Electricidad.
+                    </p>
+                    <div class="tech-used">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Markdown</span>
                     </div>
+                    <a href="https://orlando299.github.io/Mi-Blogs-de-Matem-ticas-/" target="_blank" class="learn-more">
+                        Ver proyecto →
+                    </a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ============================================================
     TESTIMONIALS
