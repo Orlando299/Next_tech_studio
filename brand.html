@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NexTech Studio - Manual de Identidad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <style>
+        /* ============================================================
+           BASE
+           ============================================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0A0E1A;
+            color: #FFFFFF;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 70px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #6C3CE1, #00D4FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-sub {
+            color: #8E95B0;
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: #141B2D;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(108, 60, 225, 0.3);
+            box-shadow: 0 20px 60px rgba(108, 60, 225, 0.08);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .mt-2 {
+            margin-top: 20px;
+        }
+
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+
+        /* ============================================================
+           LOGO
+           ============================================================ */
+        .logo-svg {
+            width: 100%;
+            max-width: 280px;
+        }
+
+        .logo-svg svg {
+            width: 100%;
+            height: auto;
+        }
+
+        .logo-variants {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+            background: #0A0E1A;
+            padding: 30px;
+            border-radius: 16px;
+        }
+
+        .logo-variants .variant {
+            background: #141B2D;
+            padding: 20px 30px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .logo-variants .variant.light-bg {
+            background: #FFFFFF;
+        }
+
+        /* ============================================================
+           COLORES
+           ============================================================ */
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .color-swatch .circle {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .color-swatch .circle:hover {
+            transform: scale(1.05);
+        }
+
+        .color-swatch .hex {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #8E95B0;
+        }
+
+        .color-swatch .name {
+            font-size: 0.75rem;
+            color: #C5CBE0;
+        }
+
+        /* ============================================================
+           TARJETAS DE PRESENTACIÓN (mockup 3D)
+           ============================================================ */
+        .business-card {
+            width: 340px;
+            height: 200px;
+            background: linear-gradient(135deg, #141B2D, #1E2A3F);
+            border-radius: 16px;
+            padding: 24px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: transform 0.5s ease;
+            margin: 0 auto;
+        }
+
+        .business-card:hover {
+            transform: rotateY(-5deg) rotateX(5deg) scale(1.02);
+        }
+
+        .business-card .card-brand {
+            font-size: 1.6rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .business-card .card-brand .icon {
+            background: linear-gradient(135deg, #6C3CE1, #00D4FF);
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .business-card .card-tagline {
+            color: #8E95B0;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 4px;
+        }
+
+        .business-card .card-divider {
+            height: 2px;
+            background: linear-gradient(90deg, #6C3CE1, #00D4FF);
+            width: 40px;
+            margin: 12px 0;
+        }
+
+        .business-card .card-contact {
+            font-size: 0.75rem;
+            color: #C5CBE0;
+            line-height: 1.6;
+        }
+
+        .business-card .card-contact span {
+            display: block;
+        }
+
+        .business-card .card-icon-deco {
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            font-size: 8rem;
+            opacity: 0.06;
+            pointer-events: none;
+        }
+
+        .business-card .card-corner {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, transparent 50%, rgba(108, 60, 225, 0.1) 50%);
+            border-radius: 0 16px 0 0;
+        }
+
+        /* ============================================================
+           PAPELERÍA (mockup)
+           ============================================================ */
+        .letterhead {
+            background: #FFFFFF;
+            color: #0A0E1A;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .letterhead .lh-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #6C3CE1;
+            padding-bottom: 12px;
+            margin-bottom: 20px;
+        }
+
+        .letterhead .lh-header .lh-brand {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #0A0E1A;
+        }
+
+        .letterhead .lh-header .lh-brand .lh-icon {
+            background: linear-gradient(135deg, #6C3CE1, #00D4FF);
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            display: inline-block;
+            text-align: center;
+            line-height: 28px;
+            color: white;
+            font-size: 0.9rem;
+            margin-right: 6px;
+        }
+
+        .letterhead .lh-header .lh-contact {
+            font-size: 0.7rem;
+            color: #5A6180;
+            text-align: right;
+        }
+
+        .letterhead .lh-body {
+            min-height: 150px;
+            color: #1E293B;
+        }
+
+        .letterhead .lh-body p {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+        }
+
+        /* ============================================================
+           TIPOGRAFÍA
+           ============================================================ */
+        .font-sample {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .font-sample .sample-h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+        }
+
+        .font-sample .sample-h2 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .font-sample .sample-body {
+            font-size: 1rem;
+            font-weight: 400;
+            color: #C5CBE0;
+        }
+
+        .font-sample .sample-small {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: #8E95B0;
+        }
+
+        /* ============================================================
+           TONO DE VOZ
+           ============================================================ */
+        .tone-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .tone-item {
+            background: #0A0E1A;
+            padding: 16px 20px;
+            border-radius: 12px;
+            border-left: 4px solid #6C3CE1;
+        }
+
+        .tone-item .label {
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: #6C3CE1;
+        }
+
+        .tone-item .desc {
+            color: #C5CBE0;
+            font-size: 0.9rem;
+            margin-top: 4px;
+        }
+
+        /* ============================================================
+           REDES SOCIALES
+           ============================================================ */
+        .social-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+
+        .social-item {
+            background: #0A0E1A;
+            padding: 16px 24px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .social-item:hover {
+            border-color: #6C3CE1;
+            transform: translateY(-3px);
+        }
+
+        .social-item .s-icon {
+            font-size: 1.6rem;
+        }
+
+        .social-item .s-info {
+            text-align: left;
+        }
+
+        .social-item .s-info .s-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .social-item .s-info .s-handle {
+            font-size: 0.75rem;
+            color: #8E95B0;
+        }
+
+        /* ============================================================
+           RESPONSIVE
+           ============================================================ */
+        @media (max-width: 768px) {
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .tone-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .business-card {
+                width: 100%;
+                max-width: 340px;
+            }
+
+            .logo-variants {
+                flex-direction: column;
+            }
+
+            .letterhead {
+                padding: 20px;
+            }
+
+            .letterhead .lh-header {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .letterhead .lh-header .lh-contact {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 20px;
+            }
+        }
+
+        /* ============================================================
+           UTILIDADES
+           ============================================================ */
+        .badge {
+            display: inline-block;
+            background: rgba(108, 60, 225, 0.15);
+            color: #8B6FE8;
+            padding: 4px 14px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(108, 60, 225, 0.2);
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.08), transparent);
+            margin: 40px 0;
+        }
+
+        .mockup-3d {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- ==========================================================
+        HEADER
+        ========================================================== -->
+        <header class="section text-center">
+            <div style="display:inline-block; background: linear-gradient(135deg, #6C3CE1, #00D4FF); padding: 2px 20px; border-radius: 50px; font-size:0.75rem; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:white; margin-bottom:16px;">
+                Manual de Identidad
+            </div>
+            <h1 style="font-size:3rem; font-weight:900; line-height:1.1;">
+                NexTech <span style="background:linear-gradient(135deg,#6C3CE1,#00D4FF); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">Studio</span>
+            </h1>
+            <p style="color:#8E95B0; font-size:1.2rem; max-width:600px; margin:12px auto 0;">
+                Construyendo el futuro digital con identidad y propósito
+            </p>
+        </header>
+
+        <!-- ==========================================================
+        LOGO
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Logotipo</h2>
+            <p class="section-sub">Símbolo + tipografía, variantes y usos</p>
+
+            <div class="card">
+                <div class="logo-variants">
+                    <!-- Logo horizontal (color) -->
+                    <div class="variant">
+                        <svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#grad1)"/>
+                            <text x="18" y="34" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="white" text-anchor="middle">⚡</text>
+                            <text x="60" y="36" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="white">NexTech</text>
+                            <text x="166" y="36" font-family="Inter, sans-serif" font-size="28" font-weight="300" fill="#8E95B0">Studio</text>
+                            <defs>
+                                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6C3CE1"/>
+                                    <stop offset="100%" stop-color="#00D4FF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Logo horizontal (blanco sobre oscuro) -->
+                    <div class="variant" style="background:#0A0E1A;">
+                        <svg width="240" height="60" viewBox="0 0 240 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="48" height="48" rx="12" fill="url(#grad2)"/>
+                            <text x="18" y="34" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="white" text-anchor="middle">⚡</text>
+                            <text x="60" y="36" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="white">NexTech</text>
+                            <text x="166" y="36" font-family="Inter, sans-serif" font-size="28" font-weight="300" fill="#8E95B0">Studio</text>
+                            <defs>
+                                <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6C3CE1"/>
+                                    <stop offset="100%" stop-color="#00D4FF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+
+                    <!-- Logo símbolo (icono) -->
+                    <div class="variant">
+                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="0" y="0" width="60" height="60" rx="16" fill="url(#grad3)"/>
+                            <text x="30" y="42" font-family="Inter, sans-serif" font-size="34" font-weight="800" fill="white" text-anchor="middle">⚡</text>
+                            <defs>
+                                <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#6C3CE1"/>
+                                    <stop offset="100%" stop-color="#00D4FF"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                    </div>
+                </div>
+
+                <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:12px; justify-content:center;">
+                    <span class="badge">Versión horizontal</span>
+                    <span class="badge">Versión monocromática</span>
+                    <span class="badge">Versión icono</span>
+                    <span class="badge">Fondo oscuro / claro</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        PALETA DE COLORES
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Paleta de colores</h2>
+            <p class="section-sub">Códigos y usos recomendados</p>
+
+            <div class="grid-3">
+                <div class="card text-center">
+                    <div class="color-swatch">
+                        <div class="circle" style="background: #6C3CE1;"></div>
+                        <span class="hex">#6C3CE1</span>
+                        <span class="name">Primario (morado)</span>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="color-swatch">
+                        <div class="circle" style="background: #00D4FF;"></div>
+                        <span class="hex">#00D4FF</span>
+                        <span class="name">Secundario (cian)</span>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="color-swatch">
+                        <div class="circle" style="background: #FF6B6B;"></div>
+                        <span class="hex">#FF6B6B</span>
+                        <span class="name">Acento (rojo)</span>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="color-swatch">
+                        <div class="circle" style="background: #0A0E1A;"></div>
+                        <span class="hex">#0A0E1A</span>
+                        <span class="name">Fondo oscuro</span>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="color-swatch">
+                        <div class="circle" style="background: #FFFFFF;"></div>
+                        <span class="hex">#FFFFFF</span>
+                        <span class="name">Texto / fondos claros</span>
+                    </div>
+                </div>
+                <div class="card text-center">
+                    <div class="color-swatch">
+                        <div class="circle" style="background: #8E95B0;"></div>
+                        <span class="hex">#8E95B0</span>
+                        <span class="name">Texto secundario</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        TIPOGRAFÍA
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Tipografía</h2>
+            <p class="section-sub">Inter, de Google Fonts, para todos los usos</p>
+
+            <div class="card">
+                <div class="font-sample">
+                    <span class="sample-h1">H1 · Títulos principales</span>
+                    <span class="sample-h2">H2 · Subtítulos</span>
+                    <span class="sample-body">Body · Texto de párrafo con un estilo moderno y legible. Ideal para sitios web y documentos.</span>
+                    <span class="sample-small">Small · Notas, pies de página, metadata</span>
+                </div>
+                <div style="margin-top:16px; display:flex; gap:16px; flex-wrap:wrap;">
+                    <span class="badge">Peso 400 (Regular)</span>
+                    <span class="badge">Peso 600 (Semi-bold)</span>
+                    <span class="badge">Peso 800 (Extra-bold)</span>
+                    <span class="badge">Espaciado: -0.02em</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        TARJETA DE PRESENTACIÓN
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Tarjeta de presentación</h2>
+            <p class="section-sub">Diseño 3D · Formato físico y digital</p>
+
+            <div class="card">
+                <div class="mockup-3d">
+                    <div class="business-card">
+                        <div class="card-corner"></div>
+                        <div class="card-brand">
+                            <span class="icon">⚡</span> NexTech
+                        </div>
+                        <div class="card-tagline">Construyendo el futuro digital</div>
+                        <div class="card-divider"></div>
+                        <div class="card-contact">
+                            <span>📧 contacto@nextech.studio</span>
+                            <span>📱 +58 412 1234567</span>
+                            <span>🌐 nextech.studio</span>
+                        </div>
+                        <div class="card-icon-deco">⚡</div>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:12px;">
+                    <span class="badge">Diseño minimalista</span>
+                    <span class="badge">Acabado mate con relieve</span>
+                    <span class="badge">Medidas 8.5 × 5.4 cm</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        PAPELERÍA (HOJA MEMBRETADA)
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Papelería</h2>
+            <p class="section-sub">Hoja membretada y sobre</p>
+
+            <div class="card">
+                <div class="letterhead">
+                    <div class="lh-header">
+                        <div class="lh-brand">
+                            <span class="lh-icon">⚡</span> NexTech Studio
+                        </div>
+                        <div class="lh-contact">
+                            contacto@nextech.studio<br />
+                            +58 412 1234567
+                        </div>
+                    </div>
+                    <div class="lh-body">
+                        <p><strong>Estimado cliente,</strong></p>
+                        <p>Nos complace presentarle nuestra propuesta de desarrollo tecnológico. En NexTech Studio creemos en soluciones que transforman negocios.</p>
+                        <p>Quedamos atentos a cualquier consulta.</p>
+                        <p style="margin-top:20px;"><strong>Atentamente,</strong><br />Equipo NexTech</p>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:16px;">
+                    <span class="badge">Papelería corporativa</span>
+                    <span class="badge">Sobre a juego</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        TONO DE VOZ
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Tono de voz</h2>
+            <p class="section-sub">Cómo comunicamos nuestra marca</p>
+
+            <div class="card">
+                <div class="tone-grid">
+                    <div class="tone-item">
+                        <div class="label">Innovador</div>
+                        <div class="desc">Hablamos de futuro, tecnología y transformación con un lenguaje fresco y vanguardista.</div>
+                    </div>
+                    <div class="tone-item">
+                        <div class="label">Confiable</div>
+                        <div class="desc">Transmitimos seguridad y profesionalismo, respaldados por experiencia y resultados.</div>
+                    </div>
+                    <div class="tone-item">
+                        <div class="label">Cercano</div>
+                        <div class="desc">Usamos un tono humano, evitamos tecnicismos innecesarios y nos dirigimos al cliente de forma directa.</div>
+                    </div>
+                    <div class="tone-item">
+                        <div class="label">Inspirador</div>
+                        <div class="desc">Motivamos a nuestros clientes a soñar en grande y les mostramos cómo la tecnología puede hacerlo posible.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        REDES SOCIALES
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Redes sociales</h2>
+            <p class="section-sub">Presencia digital y perfiles recomendados</p>
+
+            <div class="card">
+                <div class="social-grid">
+                    <div class="social-item">
+                        <span class="s-icon">💼</span>
+                        <div class="s-info">
+                            <div class="s-name">LinkedIn</div>
+                            <div class="s-handle">@nextechstudio</div>
+                        </div>
+                    </div>
+                    <div class="social-item">
+                        <span class="s-icon">🐙</span>
+                        <div class="s-info">
+                            <div class="s-name">GitHub</div>
+                            <div class="s-handle">@nextech-studio</div>
+                        </div>
+                    </div>
+                    <div class="social-item">
+                        <span class="s-icon">🐦</span>
+                        <div class="s-info">
+                            <div class="s-name">Twitter / X</div>
+                            <div class="s-handle">@nextech_studio</div>
+                        </div>
+                    </div>
+                    <div class="social-item">
+                        <span class="s-icon">📸</span>
+                        <div class="s-info">
+                            <div class="s-name">Instagram</div>
+                            <div class="s-handle">@nextech.studio</div>
+                        </div>
+                    </div>
+                    <div class="social-item">
+                        <span class="s-icon">▶️</span>
+                        <div class="s-info">
+                            <div class="s-name">YouTube</div>
+                            <div class="s-handle">NexTech Studio</div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align:center; margin-top:16px;">
+                    <span class="badge">Contenido: casos de éxito, tecnología, tips</span>
+                    <span class="badge">Frecuencia: 3-5 veces por semana</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        CORREO ELECTRÓNICO
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Correo electrónico</h2>
+            <p class="section-sub">Dominio profesional y configuración</p>
+
+            <div class="card">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                    <div>
+                        <h3 style="font-size:1rem; font-weight:700; margin-bottom:8px;">📧 Correos recomendados</h3>
+                        <ul style="list-style:none; color:#C5CBE0; font-size:0.95rem; line-height:2;">
+                            <li><strong>contacto@nextech.studio</strong> — General</li>
+                            <li><strong>ventas@nextech.studio</strong> — Comercial</li>
+                            <li><strong>soporte@nextech.studio</strong> — Ayuda</li>
+                            <li><strong>hola@nextech.studio</strong> — Alternativo</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 style="font-size:1rem; font-weight:700; margin-bottom:8px;">🔧 Configuración</h3>
+                        <ul style="list-style:none; color:#C5CBE0; font-size:0.9rem; line-height:2;">
+                            <li><strong>Proveedor:</strong> Google Workspace o Zoho</li>
+                            <li><strong>Dominio:</strong> nextech.studio</li>
+                            <li><strong>IMAP/POP:</strong> Configuración estándar</li>
+                            <li><strong>Firma:</strong> Logo + enlace a web</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="margin-top:16px; text-align:center;">
+                    <span class="badge">Registra tu dominio en Namecheap o GoDaddy</span>
+                    <span class="badge">Usa Google Workspace para correo profesional</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        OFICINA / ESPACIO DE TRABAJO
+        ========================================================== -->
+        <section class="section">
+            <h2 class="section-title">Oficina & espacio de trabajo</h2>
+            <p class="section-sub">Concepto de entorno físico para la marca</p>
+
+            <div class="card">
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                    <div>
+                        <h3 style="font-size:1rem; font-weight:700; margin-bottom:8px;">📍 Ubicación sugerida</h3>
+                        <p style="color:#C5CBE0; font-size:0.95rem;">
+                            Espacio de coworking o oficina virtual en zona tecnológica (ej. Caracas, Madrid, Bogotá).<br />
+                            <span class="badge" style="margin-top:8px;">Oficina híbrida · remoto primero</span>
+                        </p>
+                        <h3 style="font-size:1rem; font-weight:700; margin-top:16px; margin-bottom:8px;">🎨 Estilo</h3>
+                        <ul style="list-style:none; color:#C5CBE0; font-size:0.9rem; line-height:2;">
+                            <li>✅ Minimalista · tech · luces LED</li>
+                            <li>✅ Paredes con proyecciones de código</li>
+                            <li>✅ Colores corporativos en detalles</li>
+                            <li>✅ Zona de brainstorming con pizarras</li>
+                        </ul>
+                    </div>
+                    <div style="background:#0A0E1A; border-radius:16px; padding:20px; display:flex; flex-direction:column; align-items:center; justify-content:center; border:1px dashed rgba(255,255,255,0.08);">
+                        <div style="font-size:4rem; opacity:0.4;">🏢</div>
+                        <p style="color:#8E95B0; font-size:0.85rem; text-align:center; margin-top:10px;">
+                            Mockup de oficina <br /> (foto real próximamente)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==========================================================
+        FOOTER
+        ========================================================== -->
+        <hr />
+        <footer style="text-align:center; color:#5A6180; font-size:0.85rem; padding:20px 0;">
+            <p>© 2026 NexTech Studio · Manual de Identidad · Versión 1.0</p>
+            <p style="margin-top:6px;">
+                <span class="badge">🚀 Hecho con ❤️ para construir el futuro digital</span>
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- ==========================================================
+    SCRIPT: INTERACCIÓN (opcional)
+    ========================================================== -->
+    <script>
+        console.log('⚡ NexTech Studio - Brand Manual loaded.');
+        // Puedes añadir efectos de scroll o interacción aquí si lo deseas.
+    </script>
+
+</body>
+</html>
