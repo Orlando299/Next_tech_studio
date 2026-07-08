@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MiNegocio para Franquicias Polar - NexTech Studio</title>
+    <style>
+        /* ====== COPIA AQUÍ TODOS LOS ESTILOS DE TU index.html ====== */
+        /* (Para ahorrar espacio, no los repito, pero en tu archivo real debes copiarlos todos) */
+        /* ====== FIN DE ESTILOS ====== */
+    </style>
+</head>
+<body>
+
+    <!-- ====== NAVBAR (igual que en index) ====== -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚡</span>
+                NexTech
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#services">Servicios</a></li>
+                <li><a href="index.html#tech">Tecnologías</a></li>
+                <li><a href="index.html#projects">Proyectos</a></li>
+                <li><a href="index.html#minegocio">MiNegocio</a></li>
+                <li><a href="polar.html" class="btn btn-accent btn-sm" style="background:var(--gradient-2);">🍺 Franquicias Polar</a></li>
+                <li><a href="index.html#contact" class="btn btn-primary btn-sm">Contactar</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
+        </div>
+    </nav>
+
+    <!-- ====== HERO ESPECÍFICO PARA POLAR ====== -->
+    <section class="hero" id="hero" style="min-height:80vh;">
+        <div class="container">
+            <div class="hero-content">
+                <span class="badge">🍺 Especial para franquiciados Polar</span>
+                <h1>
+                    Gestiona tu franquicia<br>
+                    <span class="highlight">con inteligencia</span>
+                </h1>
+                <p>
+                    Una plataforma todo-en-uno que unifica inventario, ventas y clientes, 
+                    con la seguridad de que tus datos están aislados y protegidos. 
+                    Además, cuenta con un asistente de IA para agilizar tus tareas diarias.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">
+                        Ver demo <span class="arrow">↓</span>
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
+                        Solicitar información
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat"><h3>100+</h3><p>Franquicias conectadas</p></div>
+                    <div class="stat"><h3>40%</h3><p>Reducción de costos</p></div>
+                    <div class="stat"><h3>24/7</h3><p>Asistente IA disponible</p></div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="code-block">
+                        <div class="line"><span class="comment">// Tu franquicia, más eficiente</span></div>
+                        <div class="line"><span class="keyword">const</span> polar = <span class="function">new</span> <span class="function">Franquicia</span>({</div>
+                        <div class="line" style="padding-left:20px;">inventario: <span class="string">"actualizado"</span>,</div>
+                        <div class="line" style="padding-left:20px;">ventas: <span class="string">"en tiempo real"</span>,</div>
+                        <div class="line" style="padding-left:20px;">clientes: <span class="string">"fidelizados"</span></div>
+                        <div class="line">});</div>
+                    </div>
+                </div>
+                <div class="floating-badge" style="top:-30px;right:-20px;">
+                    <span class="icon">🔐</span>
+                    <span>Multi‑tenant seguro</span>
+                </div>
+                <div class="floating-badge" style="bottom:-20px;left:-30px;">
+                    <span class="icon">🤖</span>
+                    <span>Asistente IA</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== BENEFICIOS CLAVE (reemplaza la sección de servicios) ====== -->
+    <section class="services section-padding" id="beneficios" style="background:var(--dark-card);">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <h2 class="section-title">Beneficios para tu franquicia Polar</h2>
+                <p class="section-subtitle">
+                    Todo lo que necesitas para optimizar tu operación y enfocarte en crecer.
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card animate-on-scroll">
+                    <span class="icon">🔐</span>
+                    <h3>Datos aislados y seguros</h3>
+                    <p>Cada franquicia tiene su propio espacio. Nunca verás datos de otras sucursales.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <span class="icon">📊</span>
+                    <h3>Dashboard ejecutivo</h3>
+                    <p>Resumen de ventas, inventario y clientes en un solo vistazo. Toma decisiones informadas.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <span class="icon">🤖</span>
+                    <h3>Asistente de IA por voz/texto</h3>
+                    <p>Pregunta sobre stock, ventas o clientes y obtén respuestas al instante.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <span class="icon">📥</span>
+                    <h3>Importación/exportación JSON</h3>
+                    <p>Migra tus datos fácilmente o haz copias de seguridad con un solo clic.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <span class="icon">🎨</span>
+                    <h3>Personalización total</h3>
+                    <p>Logo, avatar y mensaje de bienvenida propios. La plataforma se adapta a tu marca.</p>
+                </div>
+                <div class="service-card animate-on-scroll">
+                    <span class="icon">⚡</span>
+                    <h3>Rápida implementación</h3>
+                    <p>En minutos puedes tener tu cuenta configurada y comenzar a gestionar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== DEMO INTERACTIVA (con tema Polar por defecto) ====== -->
+    <section class="section-padding" id="demo" style="background:var(--dark); border-top:1px solid rgba(255,255,255,0.06);">
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align:center; margin-bottom:40px;">
+                <span class="badge" style="display:inline-block; padding:6px 16px; background:rgba(108,60,225,0.2); border:1px solid rgba(108,60,225,0.3); border-radius:50px; font-size:0.8rem; font-weight:600; color:var(--primary-light); margin-bottom:16px;">⭐ Prueba la demo</span>
+                <h2 class="section-title" style="margin-bottom:12px;">
+                    Experimenta <span style="background:var(--gradient-1); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">MiNegocio</span> en acción
+                </h2>
+                <p class="section-subtitle" style="max-width:600px; margin:0 auto; color:var(--gray-400);">
+                    Ingresa con las credenciales de prueba y descubre cómo puede ayudarte.
+                </p>
+            </div>
+
+            <!-- Iframe con tema polar cargado -->
+            <div class="demo-frame-wrapper animate-on-scroll">
+                <iframe 
+                    id="demo-iframe-minegocio" 
+                    src="https://orlando299.github.io/Mi_Negocio/?tema=polar" 
+                    loading="lazy"
+                    allow="clipboard-write"
+                    style="width:100%; height:700px; border:none; display:block; background:#fff;"
+                ></iframe>
+            </div>
+            <p class="demo-hint animate-on-scroll" style="text-align:center; color:var(--gray-400); margin-top:16px; opacity:0.7;">
+                💡 Credenciales: <strong>admin1@polar1.com</strong> / <strong>Polar2026!</strong>
+            </p>
+
+            <!-- CTA fuerte -->
+            <div style="text-align:center; margin-top:40px;" class="animate-on-scroll">
+                <a href="https://orlando299.github.io/Mi_Negocio/" target="_blank" class="btn btn-primary" style="font-size:1.2rem; padding:16px 48px;">
+                    🚀 Abrir demo en pantalla completa
+                </a>
+                <a href="#contacto" class="btn btn-secondary" style="font-size:1.2rem; padding:16px 48px; margin-left:16px;">
+                    📩 Solicitar información
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TESTIMONIOS ESPECÍFICOS ====== -->
+    <section class="testimonials section-padding" id="testimonios" style="background:var(--dark-card);">
+        <div class="container">
+            <div class="section-header animate-on-scroll" style="text-align:center; margin-bottom:60px;">
+                <h2 class="section-title">Lo que dicen otros franquiciados</h2>
+                <p class="section-subtitle" style="margin:0 auto;">Experiencias reales de quienes ya están usando MiNegocio.</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>
+                        "MiNegocio nos permite gestionar todas nuestras franquicias Polar desde un solo lugar. 
+                        El asistente de IA nos ahorra horas de trabajo diarias. ¡Es la herramienta que todo 
+                        franquiciado necesita!"
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">CM</div>
+                        <div class="info">
+                            <h4>Carlos Méndez</h4>
+                            <p>Franquiciado Polar, Región Centro</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>
+                        "La importación de datos desde mi sistema anterior fue sencilla. 
+                        En menos de una hora ya tenía todo funcionando. El soporte es excelente."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">LG</div>
+                        <div class="info">
+                            <h4>Laura Gómez</h4>
+                            <p>Franquiciada Polar, Región Oriente</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card animate-on-scroll">
+                    <div class="stars">★★★★★</div>
+                    <blockquote>
+                        "El dashboard me da una visión clara de mi negocio en tiempo real. 
+                        Ahora puedo anticiparme a la demanda y optimizar mi inventario."
+                    </blockquote>
+                    <div class="author">
+                        <div class="avatar">JR</div>
+                        <div class="info">
+                            <h4>José Ramírez</h4>
+                            <p>Franquiciado Polar, Región Occidente</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== CTA CONTACTO ====== -->
+    <section class="cta section-padding" id="contacto">
+        <div class="container">
+            <div class="animate-on-scroll">
+                <h2>¿Listo para transformar tu franquicia?</h2>
+                <p>
+                    Agenda una demostración personalizada o solicita más información.
+                    Estamos aquí para ayudarte a dar el salto digital.
+                </p>
+                <div class="cta-buttons">
+                    <a href="mailto:contacto@nextech.com" class="btn btn-primary">
+                        📩 Contactar ahora <span class="arrow">→</span>
+                    </a>
+                    <a href="#" class="btn btn-secondary">
+                        📅 Agendar reunión
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER (igual que en index) ====== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="brand">
+                    <h3>⚡ NexTech</h3>
+                    <p>
+                        Agencia tech especializada en desarrollo web, software a medida,
+                        automatización con IA y plataformas SaaS.
+                    </p>
+                    <div class="socials">
+                        <a href="#" aria-label="LinkedIn">in</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">▶️</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="index.html#services">Desarrollo Web</a></li>
+                        <li><a href="index.html#services">Software a Medida</a></li>
+                        <li><a href="index.html#services">Automatización IA</a></li>
+                        <li><a href="index.html#services">Plataformas SaaS</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="index.html#projects">Casos de éxito</a></li>
+                        <li><a href="#">Preguntas frecuentes</a></li>
+                        <li><a href="#">Soporte</a></li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:contacto@nextech.com">contacto@nextech.com</a></li>
+                        <li><a href="#">+58 412 1234567</a></li>
+                        <li><a href="#">Caracas, Venezuela</a></li>
+                        <li><a href="#">Lun - Vie: 9am - 6pm</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="bottom">
+                <p>&copy; 2026 NexTech Studio. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====== JAVASCRIPT (igual que en index) ====== -->
+    <script>
+        // Copia aquí todo el JS de tu index.html (navbar, scroll, animaciones, etc.)
+        // Asegúrate de incluir también el observer y el smooth scroll.
+        console.log('🍺 Landing específica para franquiciados Polar');
+    </script>
+</body>
+</html>
