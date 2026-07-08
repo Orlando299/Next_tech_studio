@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MiNegocio para Franquicias Polar - NexTech Studio</title>
-      <style>
+   <style>
         /* ============================================================
            CSS VARIABLES / TEMA
            ============================================================ */
@@ -1291,7 +1291,7 @@
 </head>
 <body>
 
-    <!-- ====== NAVBAR (igual que en index) ====== -->
+    <!-- ====== NAVBAR ====== -->
     <nav class="navbar" id="navbar">
         <div class="container">
             <a href="index.html" class="logo">
@@ -1303,7 +1303,7 @@
                 <li><a href="index.html#tech">Tecnologías</a></li>
                 <li><a href="index.html#projects">Proyectos</a></li>
                 <li><a href="index.html#minegocio">MiNegocio</a></li>
-                <li><a href="polar.html" class="btn btn-accent btn-sm" style="background:var(--gradient-2);">🍺 Franquicias Polar</a></li>
+                <li><a href="index.html" class="btn btn-primary btn-sm">🏠 Inicio</a></li>
                 <li><a href="index.html#contact" class="btn btn-primary btn-sm">Contactar</a></li>
             </ul>
             <button class="mobile-toggle" id="mobileToggle" aria-label="Menu">☰</button>
@@ -1325,12 +1325,12 @@
                     Además, cuenta con un asistente de IA para agilizar tus tareas diarias.
                 </p>
                 <div class="hero-buttons">
-                <a href="https://orlando299.github.io/Mi_Negocio/?tema=polar" target="_blank" class="btn btn-primary">
-                Ver demo <span class="arrow">→</span>
-                </a>
-                <a href="#contacto" class="btn btn-secondary">
+                    <a href="https://orlando299.github.io/Mi_Negocio/?tema=polar" target="_blank" class="btn btn-primary">
+                        Ver demo <span class="arrow">→</span>
+                    </a>
+                    <a href="#contacto" class="btn btn-secondary">
                         Solicitar información
-                </a>
+                    </a>
                 </div>
                 <div class="hero-stats">
                     <div class="stat"><h3>100+</h3><p>Franquicias conectadas</p></div>
@@ -1361,7 +1361,7 @@
         </div>
     </section>
 
-    <!-- ====== BENEFICIOS CLAVE (reemplaza la sección de servicios) ====== -->
+    <!-- ====== BENEFICIOS CLAVE ====== -->
     <section class="services section-padding" id="beneficios" style="background:var(--dark-card);">
         <div class="container">
             <div class="section-header animate-on-scroll">
@@ -1520,7 +1520,7 @@
         </div>
     </section>
 
-    <!-- ====== FOOTER (igual que en index) ====== -->
+    <!-- ====== FOOTER ====== -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
@@ -1571,11 +1571,77 @@
         </div>
     </footer>
 
-    <!-- ====== JAVASCRIPT (igual que en index) ====== -->
+    <!-- ====== JAVASCRIPT ====== -->
     <script>
-        // Copia aquí todo el JS de tu index.html (navbar, scroll, animaciones, etc.)
-        // Asegúrate de incluir también el observer y el smooth scroll.
+        // ============================================================
+        // 1. NAVBAR SCROLL
+        // ============================================================
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // ============================================================
+        // 2. MOBILE TOGGLE
+        // ============================================================
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        mobileToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('open');
+        });
+
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+            });
+        });
+
+        // ============================================================
+        // 3. ANIMACIONES ON SCROLL (Intersection Observer)
+        // ============================================================
+        const animateElements = document.querySelectorAll('.animate-on-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        animateElements.forEach(el => observer.observe(el));
+
+        // ============================================================
+        // 4. SMOOTH SCROLL
+        // ============================================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href === '#') return;
+
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) {
+                    const offsetTop = target.offsetTop - 80;
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
         console.log('🍺 Landing específica para franquiciados Polar');
     </script>
+
 </body>
 </html>
